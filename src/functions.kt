@@ -17,6 +17,14 @@ fun String.removeFirstChar() : String = this.substring(1,this.length)  //extenst
 // here "this" is the receiver object
 
 
+//
+fun calculate(a: Int, b: Int, operation: (Int, Int) -> Int): Int
+{
+    return operation(a, b)
+}
+fun add(x: Int, y: Int) = x + y
+
+
 fun main()
 {
     //basic function without return type or arguments
@@ -36,6 +44,24 @@ fun main()
     val result = mystring.removeFirstChar()
     println(mystring)
     println(result)
+
+
+    //Higher Order Functions
+    //takes one or more functions as arguments or returns a function
+    val sum = calculate(10, 5, ::add)
+    println("Sum: $sum")
+
+
+    //Function literals
+    //It is not declared but is immediately passed as an expression
+    //lambda is the most common Syntax: { parameter -> body }
+
+    // val difference = calculate(10, 5, { x, y -> x - y }) This will work but below is better syntax common in kotlin
+
+    // here we sent function argument in parenthesis after other arguments:-
+    val difference = calculate(10, 5, { x, y -> x - y })
+    println("Difference: $difference")
+
 
 
 }
