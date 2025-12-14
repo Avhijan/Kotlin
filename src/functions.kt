@@ -8,12 +8,12 @@ fun displayArgument(varName: Int)
     println(varName)
 }
 
-fun returnArgument(varName: Int) : Int //Assign the return type using : type after the funtion and brfore the scope
+fun returnArgument(varName: Int) : Int //Assign the return type using : type after the function and before the scope
 {
     return varName
 }
 
-fun String.removeFirstChar() : String = this.substring(1,this.length)  //extenstion function
+fun String.removeFirstChar() : String = this.substring(1,this.length)  //extension function
 // here "this" is the receiver object
 
 
@@ -40,9 +40,9 @@ fun main()
 
     //kotlin has a feature which allows us to extend a class with new functionalities
     //For this we use extension function
-    val mystring = "Kotlin is life"
-    val result = mystring.removeFirstChar()
-    println(mystring)
+    val myString = "Kotlin is life"
+    val result = myString.removeFirstChar()
+    println(myString)
     println(result)
 
 
@@ -58,9 +58,13 @@ fun main()
 
     // val difference = calculate(10, 5, { x, y -> x - y }) This will work but below is better syntax common in kotlin
 
-    // here we sent function argument in parenthesis after other arguments:-
+    // here we sent function argument in parentheses after other arguments:-
     val difference = calculate(10, 5, { x, y -> x - y })
     println("Difference: $difference")
+
+    //Passing a lambda in HOF will create an extra object in memory
+    //Instead we use Inline keyword.
+    //This tells compiler to replace the function site with function code block.
 
 
 
