@@ -82,7 +82,7 @@ fun main()
 
     val person3 = Person("Sita")
     println("comparison between two instances with same content and different address")
-    println(person1 == person3)// return truee
+    println(person1 == person3)// return true
 
     //copy function can be used to create copies of an instance
     // features that need to be changed can be changed in the brackets
