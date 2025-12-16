@@ -44,7 +44,22 @@ fun main(){
     val changing_list : MutableList<Double> = mutableListOf(2.3,2.5,3.4) //same data type, dynamic size, mutable
 
 
+    //nullability in kotlin
+    //in kotlin we have to declare if a variable can have null value
+    //we put a question mark after the data type in variable declaration
+    //Syntax: var var_name : data-type?
 
+    var h : String? = "yay"
+    if(h != null) //converting to uppercase if not null
+    {
+        println(h.uppercase())
+    }
+
+    //however we can do this if statement using the question mark operator too
+    println(h?.uppercase())
+    //Here using the question mark operator ensures the method is only called on the variable when h isn't null
+    h = null
+    println(h?.uppercase()) //this won't call the method on the variable and print null
 
 
 }
