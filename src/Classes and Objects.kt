@@ -1,3 +1,5 @@
+import Display.Days
+
 // To define a class we use "class" keyword
 // Syntax: class className( define constructors here) { --code block--}
 
@@ -29,7 +31,39 @@ data class Person (val name : String)
 }
 
 //singleton classes
+//object classes can't have constructors
+object Display
+{
+    fun DisplayHelloWorld()
+    {
+        println("hello world")
+    }
+    fun Displayfeeling(feeling:Int) : String
+    {
+        if (feeling == 1)
+        {
+            println("I love you <3")
+        }
 
+        if (feeling == -1)
+        {
+            return(" I hate you (ง •̀_•́)ง")
+        }
+        return "Nothing here"
+    }
+
+    enum class Days(val day: String)
+{
+    Sunday ("School day"),
+    Monday ("School day"),
+    Tuesday ("School day"),
+    WEDNESDAY("School day"),
+    THURSDAY("School day"),
+    FRIDAY("School day"),
+    SATURDAY("Holiday!!!")
+}
+
+}
 
 fun main()
 {
@@ -87,5 +121,29 @@ fun main()
     //copy function can be used to create copies of an instance
     // features that need to be changed can be changed in the brackets
     // Syntax: val personCopy = person1.copy( // change specific parts here)
+
+
+    //Singleton classes
+    //Use "object" keyword
+    //will create only one instance and we cannot create anymore
+    //Accessing the singleton class
+    //Syntax: Object_name.method()
+    Display.DisplayHelloWorld()
+    Display.Displayfeeling(1)
+    println(Display.Displayfeeling(-1))
+
+    //Similarly we can use the "data" keyword to make data objects
+    //This will have similar properties as the data class
+    //Use if we need to bundle information
+
+
+    //enumeration classes
+    //We use enum class in order to use enumeration in kotlin
+    //specialized class that represents a fixed set of related constants
+    //values are treated like objects and can have constructors
+    //no new instances from the values
+    val day = Days.Sunday.day
+    println(day)
+
 
 }
